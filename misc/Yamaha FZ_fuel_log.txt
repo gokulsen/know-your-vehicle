@@ -1,0 +1,4 @@
+Date,Fuel Left Before (L),Fuel Filled (L),Cost,Distance Run (km),Fuel Left (L),Mileage (km/L)
+2025-01-27,0.9,4.3,440,210,1.1,51.22
+2025-02-04,1.1,4.1,420,200,0.9,46.51
+2025-02-13,0.9,4.3,440,,,

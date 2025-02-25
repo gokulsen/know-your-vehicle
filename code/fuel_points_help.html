@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Find Fuel Points</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .image-container {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        p {
+            font-size: 14px;
+            margin: 10px 0;
+            text-align: left;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>How to Identify Fuel Points</h1>
+    <div class="image-container">
+        <img src="https://github.com/gokulsen/know-your-vehicle/blob/main/1.jpg?raw=true" alt="Fuel Gauge Showing Full Tank">
+        <img src="https://github.com/gokulsen/know-your-vehicle/blob/main/2.jpg?raw=true" alt="Fuel Gauge Showing Half Tank">
+        <p><strong>Image: Fuel Gauge - Analog & Digital</strong><br>
+        This shows a typical fuel gauge - Count the number of segments or points from empty (E) to full (F). For example, if there are 10 segments, the "Full Points" would be 10. When the gauge is at half capacity, then points would be 5. Use this to estimate the "Remaining Points" after a trip.</p>
+    </div>
+    
+    <h2>Calculation</h2>
+    <p>To determine the mileage of your vehicle, first, you need to calculate how much fuel is used based on the fuel points system. The total tank capacity is divided by the full points to get the fuel volume per point.</p>
+    
+    <p>Next, the fuel added is converted into fuel points by dividing the fuel filled by the liters per point. Then, the actual fuel consumed is determined by subtracting the remaining points from the fuel-filled points.</p>
+    
+    <p>Finally, mileage is calculated by dividing the total distance traveled by the fuel consumed in points. This gives the fuel efficiency in terms of kilometers per fuel point.</p>
+    
+    <p><strong>Formula:</strong></p>
+    <p>Liters per Point = Tank Capacity / Full Points</p>
+    <p>Fuel Filled in Points = Fuel Filled / Liters per Point</p>
+    <p>Fuel Consumed in Points = Fuel Filled in Points - Remaining Points</p>
+    <p>Mileage = Distance Traveled / Fuel Consumed in Points</p>
+</body>
+</html>
