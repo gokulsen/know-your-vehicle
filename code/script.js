@@ -11,7 +11,7 @@ document.querySelectorAll('.tab-button').forEach(button => {
 
 // Function to open Fuel Points Help popup
 function openFuelPointsHelp() {
-    const popup = window.open('code/help.html', 'FuelPointsHelp', 'width=600,height=500,scrollbars=yes');
+    const popup = window.open('help.html', 'FuelPointsHelp', 'width=600,height=500,scrollbars=yes');
     if (popup) popup.focus();
 }
 
