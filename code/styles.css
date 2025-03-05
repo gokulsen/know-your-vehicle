@@ -15,9 +15,9 @@ body {
 }
 
 .wrapper {
-    max-width: 1400px; /* Increased max-width to utilize more screen space on larger screens */
+    max-width: auto; /* Increased max-width to utilize more screen space on larger screens */
     margin: 0 auto;
-    width: 90%; /* Use 90% of the viewport width for better spacing */
+    width: auto; /* Use 90% of the viewport width for better spacing */
 }
 
 /* Page Header */
@@ -330,12 +330,12 @@ td {
     display: block; /* Ensure table behaves as a standard block element */
     overflow-x: auto; /* Add horizontal scrolling if table is too wide */
     overflow-y: auto; /* Add vertical scrolling if table content overflows */
-    max-height: 100%; /* Allow table to use full height of container */
+    max-height: auto; /* Allow table to use full height of container */
 }
 
 #fuelTableBody {
     display: table-row-group; /* Reset to default table behavior */
-    width: 100%; /* Ensure tbody matches table width */
+    width: auto; /* Ensure tbody matches table width */
 }
 
 /* Vehicle Selector */
