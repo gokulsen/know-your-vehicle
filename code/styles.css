@@ -15,8 +15,9 @@ body {
 }
 
 .wrapper {
-    max-width: 1280px;
+    max-width: 1400px; /* Increased max-width to utilize more screen space on larger screens */
     margin: 0 auto;
+    width: 90%; /* Use 90% of the viewport width for better spacing */
 }
 
 /* Page Header */
@@ -41,6 +42,7 @@ body {
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
+    justify-content: center; /* Center tabs on larger screens */
 }
 
 .tab-button {
@@ -81,6 +83,7 @@ body {
     justify-content: space-between;
     align-items: stretch; /* Ensure all sections stretch to the same height */
     min-height: 0; /* Prevent container from growing too large and cutting off content */
+    width: 100%; /* Use full width of wrapper */
 }
 
 /* Container Layout (Tab 2 - Vehicle Expense) */
@@ -89,6 +92,7 @@ body {
     justify-content: space-between;
     padding: 20px;
     gap: 20px;
+    width: 100%; /* Use full width of wrapper */
 }
 
 .section, .left-column, .right-column {
@@ -102,9 +106,9 @@ body {
 }
 
 .section {
-    flex: 1; /* Ensure equal width distribution */
+    flex: 1; /* Ensure equal width distribution, but allow growth */
     min-width: 300px;
-    max-width: 400px;
+    max-width: none; /* Removed max-width to allow expansion on larger screens */
     transition: transform 0.2s ease;
 }
 
@@ -323,7 +327,7 @@ td {
 /* Fuel Log Table Specific Adjustments */
 #fuelTable {
     flex-grow: 1; /* Ensure table takes up available vertical space */
-    display: block; /* Change back to block to ensure full visibility */
+    display: block; /* Ensure table behaves as a standard block element */
     overflow-x: auto; /* Add horizontal scrolling if table is too wide */
     overflow-y: auto; /* Add vertical scrolling if table content overflows */
     max-height: 100%; /* Allow table to use full height of container */
@@ -350,6 +354,7 @@ td {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    width: 100%; /* Use full width of wrapper */
 }
 
 .report-column {
@@ -445,6 +450,30 @@ input[type="range"]::-moz-range-thumb {
 }
 
 /* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .mileage-container, .expense-container {
+        flex-wrap: wrap;
+    }
+
+    .section, .left-column, .right-column {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0; /* Remove minimum width constraint on tablets */
+    }
+
+    .wrapper {
+        width: 85%; /* Slightly reduce width on tablets */
+    }
+
+    th, td {
+        min-width: 80px; /* Reduce column min-width for tablets */
+    }
+
+    #fuelTable {
+        overflow-x: auto; /* Ensure horizontal scrolling on tablets */
+    }
+}
+
 @media (max-width: 900px) {
     .mileage-container, .expense-container {
         flex-wrap: wrap;
@@ -453,6 +482,7 @@ input[type="range"]::-moz-range-thumb {
     .section, .left-column, .right-column {
         width: 100%;
         max-width: 100%;
+        min-width: 0; /* Remove minimum width constraint on mobile */
     }
 
     .page-header {
@@ -462,7 +492,7 @@ input[type="range"]::-moz-range-thumb {
     th, td {
         font-size: 12px;
         padding: 6px 8px; /* Reduced padding for smaller screens */
-        min-width: 80px; /* Reduced min-width for smaller screens */
+        min-width: 60px; /* Further reduce min-width for mobile */
     }
 
     .editable-input {
@@ -489,6 +519,10 @@ input[type="range"]::-moz-range-thumb {
 
     .tab-button {
         border-radius: 6px;
+    }
+
+    .wrapper {
+        width: 80%; /* Further reduce width on mobile */
     }
 
     #fuelTable {
