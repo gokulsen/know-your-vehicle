@@ -11,7 +11,7 @@ body {
     color: #333;
     line-height: 1.6;
     padding: 20px;
-    font-size: 14px; /* Base font size */
+    font-size: 14px;
 }
 
 .wrapper {
@@ -79,7 +79,8 @@ body {
     flex-wrap: nowrap;
     gap: 20px;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: stretch; /* Ensure all sections stretch to the same height */
+    min-height: 0; /* Prevent container from growing too large and cutting off content */
 }
 
 /* Container Layout (Tab 2 - Vehicle Expense) */
@@ -95,10 +96,13 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column; /* Ensure content stacks vertically */
+    min-height: 0; /* Prevent section from growing too large and cutting off content */
 }
 
 .section {
-    width: 33%;
+    flex: 1; /* Ensure equal width distribution */
     min-width: 300px;
     max-width: 400px;
     transition: transform 0.2s ease;
@@ -260,12 +264,17 @@ table {
     background: #fff;
     border-radius: 6px;
     overflow: hidden;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Allow table to grow to fill available space */
+    min-height: 0; /* Ensure table doesn't overflow or get cut off */
+    max-height: none; /* Remove any max-height constraints */
 }
 
 th, td {
     border: 1px solid #e0e0e0;
-    padding: 8px;
+    padding: 8px 12px; /* Increased horizontal padding for better spacing */
     text-align: left;
+    min-width: 100px; /* Increased min-width for better column spacing */
 }
 
 th {
@@ -296,10 +305,6 @@ td {
     color: #555;
 }
 
-th, td {
-    min-width: 50px;
-}
-
 .editable-input {
     width: 100%;
     padding: 6px;
@@ -315,18 +320,29 @@ th, td {
     outline: none;
 }
 
+/* Fuel Log Table Specific Adjustments */
+#fuelTable {
+    flex-grow: 1; /* Ensure table takes up available vertical space */
+    display: block; /* Change back to block to ensure full visibility */
+    overflow-x: auto; /* Add horizontal scrolling if table is too wide */
+    overflow-y: auto; /* Add vertical scrolling if table content overflows */
+    max-height: 100%; /* Allow table to use full height of container */
+}
+
+#fuelTableBody {
+    display: table-row-group; /* Reset to default table behavior */
+    width: 100%; /* Ensure tbody matches table width */
+}
+
 /* Vehicle Selector */
 .vehicle-selector {
     margin-bottom: 20px;
 }
 
-/* Total Cost */
-#totalCost {
-    margin-top: 15px;
-    font-size: 16px;
-    font-weight: 600;
-    text-align: right;
-    color: #2c3e50;
+/* Total Cost and Buttons Alignment */
+#totalCost, #addRowBtn, #saveBtn {
+    margin-top: 10px;
+    width: 100%; /* Ensure full width for alignment */
 }
 
 /* Expense-Specific Styles */
@@ -445,7 +461,8 @@ input[type="range"]::-moz-range-thumb {
 
     th, td {
         font-size: 12px;
-        padding: 6px;
+        padding: 6px 8px; /* Reduced padding for smaller screens */
+        min-width: 80px; /* Reduced min-width for smaller screens */
     }
 
     .editable-input {
@@ -472,6 +489,10 @@ input[type="range"]::-moz-range-thumb {
 
     .tab-button {
         border-radius: 6px;
+    }
+
+    #fuelTable {
+        overflow-x: auto; /* Ensure horizontal scrolling on mobile */
     }
 }
 
